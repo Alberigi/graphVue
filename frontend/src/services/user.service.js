@@ -100,6 +100,7 @@ export class UserService {
     }
 
     async updateUser(filter, user) {
+        console.log(filter)
         const result = await this.apollo.mutate({
             mutation: gql`
                 mutation(
@@ -107,8 +108,14 @@ export class UserService {
                     $email: String
                     $password: String
                     $role: String
+                    $filtroId: Int!
+                    $filtroEmail: String!
                 ){
                     updateUser(
+                        filter: {
+                            id: $filtroId
+                            email: $filtroEmail 
+                        },
                         data: {
                             name: $name
                             email: $email

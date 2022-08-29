@@ -30,6 +30,7 @@ class UserRepository {
     };
 
     async updateUser(user) { 
+        console.log('update user',user);
         return db('user').where({ id: user.id }).update(user);
     };
 

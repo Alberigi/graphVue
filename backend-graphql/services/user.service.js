@@ -87,11 +87,7 @@ class UserService {
 
     async updateUser(filter, data ) {
         try {
-            console.log('filter',filter)
-            console.log('data', data)
-            
             const user = await this.getUser(filter);
-            console.log('user', user)
             
             if (!user) return null;
             
@@ -100,19 +96,17 @@ class UserService {
                 
                 const roleData = await this.roleService.getRole(data.role);
                 
-                console.log('roleData', roleData)
                 if(roleData) {
                     await this.userRoleRepository.createUserRole({role_id: roleData.id, user_id: user.id })
                 }
             }
             
-            console.log('password', data.password)
             if (data.password) {
                 data.password = this.cryptoService.cryptoPassword(data.password);
             }
             
             delete data.role
-            await this.roleService.updateUser(user);
+            await this.userRepository.updateUser({id: user.id,...data});
             
             return { ...user, ...data };
         } catch(e) {
