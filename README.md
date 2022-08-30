@@ -2,6 +2,8 @@
   GraphVue
 </h1>
 
+![image](https://user-images.githubusercontent.com/87280077/187553784-34ff010b-31bf-4ee0-bdb4-6e8ac784963e.png)
+
 ## :rocket: Technology
 
 This project was developed with the following technologies:
@@ -12,12 +14,12 @@ This project was developed with the following technologies:
 - [VuetifyJs](https://vuetifyjs.com/en/)
 - [GraphQl](https://graphql.org/)
 
-## 💻 Project
+## 💻 About this Project
 
 
 Web application developed with authentication system and user CRUD.Front-end in VueJs using VueRouter and Vuex, consuming a GraphQl API in NodeJs with a SQL database (Mysql).
 
-## Run project
+## Getting Started
 
 ### Run Front-end
 
@@ -31,6 +33,12 @@ Web application developed with authentication system and user CRUD.Front-end in 
 - `npm run build`
 - `knex migrate:latest`
 - `npm run start`
+
+## Pending features
+
+- [ ] Common user page
+- [ ] visitor user page
+- [ ] Layout responsive
 
 ---
 
